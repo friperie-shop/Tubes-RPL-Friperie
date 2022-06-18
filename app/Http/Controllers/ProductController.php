@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\ClickedProductController;
 use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Models\AttributeOption;
 use App\Models\Category;
-
+use App\Models\ClickedProduct;
 use Str;
 
 class ProductController extends Controller
@@ -213,8 +214,20 @@ class ProductController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($slug)
-	{
+	{    
+
 		$product = Product::active()->where('slug', $slug)->first();
+    if (\Auth::user()) {
+      foreach ($product->categories as $category){ 
+        $categoryAll = Category::where('slug', $category->slug)->firstOrFail();
+        if($categoryAll) {          
+          ClickedProduct::create([
+            'user_id'     => \Auth::user()->id,
+            'category_id' => $categoryAll->id,
+          ]);
+        }
+      }
+    }
 
 		if (!$product) {
 			return redirect('products');

@@ -1,18 +1,4 @@
 <?php
-/**
- * Web Routes
- *
- * Here is where you can register web routes for your application. These
- * routes are loaded by the RouteServiceProvider within a group which
- * contains the "web" middleware group. Now create something great!
- *
- * @category WebRoutes
- * @package  WebRoutes
- * @author   Sugiarto <sugiarto.dlingo@gmail.com>
- * @license  https://opensource.org/licenses/MIT MIT License
- * @link     http://localhost/
- */
-
 Route::get('/', 'HomeController@index');
 Route::get('/products', 'ProductController@index');
 Route::get('/product/{slug}', 'ProductController@show');
@@ -28,6 +14,7 @@ Route::post('orders/checkout', 'OrderController@doCheckout');
 Route::post('orders/shipping-cost', 'OrderController@shippingCost');
 Route::post('orders/set-shipping', 'OrderController@setShipping');
 Route::get('orders/received/{orderID}', 'OrderController@received');
+Route::get('orders/userpaid/{orderID}', 'OrderController@alreadyPaid');
 Route::get('orders/cities', 'OrderController@cities');
 Route::get('orders', 'OrderController@index');
 Route::get('orders/{orderID}', 'OrderController@show');
@@ -48,7 +35,6 @@ Route::group(
 		Route::get('dashboard', 'DashboardController@index');
 		Route::resource('categories', 'CategoryController');
 
-		
 		Route::resource('products', 'ProductController');
 		Route::get('products/{productID}/images', 'ProductController@images')->name('products.images');
 		Route::get('products/{productID}/add-image', 'ProductController@addImage')->name('products.add_image');
@@ -62,7 +48,7 @@ Route::group(
 		Route::delete('attributes/options/{optionID}', 'AttributeController@remove_option')->name('attributes.remove_option');
 		Route::get('attributes/options/{optionID}/edit', 'AttributeController@edit_option')->name('attributes.edit_option');
 		Route::put('attributes/options/{optionID}', 'AttributeController@update_option')->name('attributes.update_option');
-	
+
 		Route::resource('roles', 'RoleController');
 		Route::resource('users', 'UserController');
 
@@ -86,6 +72,12 @@ Route::group(
 	}
 );
 
+Route::group(
+	['middleware' => ['auth']],
+	function () {		
+    Route::get('/home', 'HomeController@index')->name('home');
+	}
+);
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

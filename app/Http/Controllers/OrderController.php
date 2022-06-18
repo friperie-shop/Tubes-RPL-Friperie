@@ -319,8 +319,7 @@ class OrderController extends Controller
 		$order = \DB::transaction(
 			function () use ($params) {
 				$order = $this->_saveOrder($params);
-				$this->_saveOrderItems($order);
-				$this->_generatePaymentToken($order);
+				$this->_saveOrderItems($order);				
 				$this->_saveShipment($order, $params);
 
 				return $order;
@@ -551,5 +550,24 @@ class OrderController extends Controller
 			->firstOrFail();
 
 		return $this->loadTheme('orders/received', $this->data);
+	}
+
+	/**
+	 * Update payment to paid order
+	 *
+	 * @param int $orderId order id
+	 *
+	 * @return void
+	 */
+	public function alreadyPaid($orderId)
+	{
+		$order = Order::findOrFail($orderId);
+
+    $order->status = 'confirmed';
+    $order->payment_status = 'paid';
+
+    $order->save();
+
+		return redirect('orders/received/'. $orderId);
 	}
 }

@@ -43,7 +43,7 @@
                                             <td>{{ $order->status }}</td>
                                             <td>{{ $order->payment_status }}</td>
                                             <td>
-                                                <a href="{{ url('orders/' . $order->id) }}"
+                                                <a href="{{ url('orders/received/' . $order->id) }}"
                                                     class="btn btn-info btn-sm">details</a>
                                             </td>
                                         </tr>

@@ -106,6 +106,7 @@ class CartController extends Controller
 	private function _getItemQuantity($itemId)
 	{
 		$items = \Cart::getContent();
+    
 		$itemQuantity = 0;
 		if ($items) {
 			foreach ($items as $item) {

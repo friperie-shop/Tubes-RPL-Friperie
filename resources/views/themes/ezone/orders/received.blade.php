@@ -103,7 +103,7 @@
 									</li>
 								</ul>
 								@if (!$order->isPaid())
-									<a href="{{ $order->payment_url }}">Proceed to payment</a>
+									<a href="{{ url('orders/userpaid/'. $order->id)}}">Already Paid</a>
 								@endif
 							</div>
 						</div>

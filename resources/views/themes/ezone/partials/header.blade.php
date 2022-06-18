@@ -11,9 +11,14 @@
                 <div class="menu-style-2 furniture-menu menu-hover">
                     <nav>
                         <ul>
-                            <li><a href="/">home</a>
+                            <li>
+                              <a href="/">home</a>
                             </li>
-                            <li><a href="{{ url('products') }}">Products</a>
+                            <li>
+                              <a href="{{ url('products') }}">Products</a>
+                            </li>
+                            <li>
+                              <a href="{{ url('orders') }}">Orders</a>
                             </li>
                         </ul>
                     </nav>

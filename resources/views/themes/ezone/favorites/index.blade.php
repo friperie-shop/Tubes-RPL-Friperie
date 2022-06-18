@@ -41,9 +41,9 @@
 										<tr>
 											<td class="product-remove">
 												{!! Form::open(['url' => 'favorites/'. $favorite->id, 'class' => 'delete', 'style' => 'display:inline-block']) !!}
-                                                {!! Form::hidden('_method', 'DELETE') !!}
-                                                <button type="submit" style="background-color: transparent; border-color: #FFF;">X</button>
-                                                {!! Form::close() !!}
+                        {!! Form::hidden('_method', 'DELETE') !!}
+                      <button type="submit" style="background-color: transparent; border-color: #FFF;">X</button>
+                      {!! Form::close() !!}
 											</td>
 											<td class="product-thumbnail">
 												<a href="{{ url('product/'. $product->slug) }}"><img src="{{ $image }}" alt="{{ $product->name }}" style="width:100px"></a>
