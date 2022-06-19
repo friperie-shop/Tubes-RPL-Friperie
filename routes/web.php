@@ -19,10 +19,10 @@ Route::get('orders/cities', 'OrderController@cities');
 Route::get('orders', 'OrderController@index');
 Route::get('orders/{orderID}', 'OrderController@show');
 
-Route::post('payments/notification', 'PaymentController@notification');
-Route::get('payments/completed', 'PaymentController@completed');
-Route::get('payments/failed', 'PaymentController@failed');
-Route::get('payments/unfinish', 'PaymentController@unfinish');
+// Route::post('payments/notification', 'PaymentController@notification');
+// Route::get('payments/completed', 'PaymentController@completed');
+// Route::get('payments/failed', 'PaymentController@failed');
+// Route::get('payments/unfinish', 'PaymentController@unfinish');
 
 Route::resource('favorites', 'FavoriteController');
 
@@ -61,14 +61,14 @@ Route::group(
 
 		Route::resource('shipments', 'ShipmentController');
 
-		Route::resource('slides', 'SlideController');
-		Route::get('slides/{slideID}/up', 'SlideController@moveUp');
-		Route::get('slides/{slideID}/down', 'SlideController@moveDown');
+		// Route::resource('slides', 'SlideController');
+		// Route::get('slides/{slideID}/up', 'SlideController@moveUp');
+		// Route::get('slides/{slideID}/down', 'SlideController@moveDown');
 
 		Route::get('reports/revenue', 'ReportController@revenue');
 		Route::get('reports/product', 'ReportController@product');
 		Route::get('reports/inventory', 'ReportController@inventory');
-		Route::get('reports/payment', 'ReportController@payment');
+		// Route::get('reports/payment', 'ReportController@payment');
 	}
 );
 

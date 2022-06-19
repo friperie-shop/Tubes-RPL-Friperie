@@ -94,28 +94,6 @@
                                      <span class="nav-text">Inventories</span>
                                  </a>
                              </li>
-                             <li class="{{ $currentAdminSubMenu == 'report-payment' ? 'active' : '' }}">
-                                 <a class="sidenav-item-link" href="{{ url('admin/reports/payment') }}">
-                                     <span class="nav-text">Payments</span>
-                                 </a>
-                             </li>
-                         </div>
-                     </ul>
-                 </li>
-                 <li class="has-sub {{ $currentAdminMenu == 'general' ? 'expand active' : '' }}">
-                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                         data-target="#general" aria-expanded="false" aria-controls="general">
-                         <i class="mdi mdi-settings"></i>
-                         <span class="nav-text">General</span> <b class="caret"></b>
-                     </a>
-                     <ul class="collapse {{ $currentAdminMenu == 'general' ? 'show' : '' }}" id="general"
-                         data-parent="#sidebar-menu">
-                         <div class="sub-menu">
-                             <li class="{{ $currentAdminSubMenu == 'slide' ? 'active' : '' }}">
-                                 <a class="sidenav-item-link" href="{{ url('admin/slides') }}">
-                                     <span class="nav-text">Slides</span>
-                                 </a>
-                             </li>
                          </div>
                      </ul>
                  </li>

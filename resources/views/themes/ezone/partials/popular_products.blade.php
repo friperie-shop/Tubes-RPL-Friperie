@@ -4,7 +4,7 @@
 		<div class="container-fluid">
 			<div class="section-title-6 text-center mb-50">
 				<h2>Related Item</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+				<p>We make recommendation of product that related to you or related for right now around the world.</p>
 			</div>
 			<div class="product-style">
 				<div class="popular-product-active owl-carousel">

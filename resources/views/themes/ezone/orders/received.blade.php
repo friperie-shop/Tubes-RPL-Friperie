@@ -54,6 +54,15 @@
 								<br> Shipped by: {{ $order->shipping_service_name }}
 							</address>
 						</div>
+						<div class="col-xl-3 col-lg-4">
+							<p class="text-dark mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Payment Method</p>
+							<address>
+								Make your payment directly into our bank account. This is our rekening:
+								<span class="text-dark"> 
+                  <b>Mandiri: 12701821212 a/n Indra Frimawan</b>                 
+                </span>								
+							</address>
+						</div>
 					</div>
 					<div class="table-content table-responsive">
 						<table class="table mt-3 table-striped table-responsive table-responsive-large" style="width:100%">

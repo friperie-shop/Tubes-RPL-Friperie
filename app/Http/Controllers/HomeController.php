@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Order;
-use App\Models\Slide;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -50,9 +49,6 @@ class HomeController extends Controller
     )->get();
     
 		$this->data['products'] = $productss;
-
-		$slides = Slide::active()->orderBy('position', 'ASC')->get();
-		$this->data['slides'] = $slides;
 
 		return $this->loadTheme('home', $this->data);
 	}

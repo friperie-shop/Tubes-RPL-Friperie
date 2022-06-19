@@ -227,27 +227,7 @@
 												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
 											</div>
 										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h5 class="panel-title"><a class="collapsed" data-toggle="collapse" aria-expanded="false" data-parent="#faq" href="#payment-2">Cheque Payment</a></h5>
-										</div>
-										<div id="payment-2" class="panel-collapse collapse">
-											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h5 class="panel-title"><a class="collapsed" data-toggle="collapse" aria-expanded="false" data-parent="#faq" href="#payment-3">PayPal</a></h5>
-										</div>
-										<div id="payment-3" class="panel-collapse collapse">
-											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-											</div>
-										</div>
-									</div>
+									</div>									
 								</div>
 								<div class="order-button-payment">
 									<input type="submit" value="Place order" />
